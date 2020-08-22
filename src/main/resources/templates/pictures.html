@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,300,600" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+  <title>Task application</title>
+</head>
+<body>
+<div class="container">
+  <h1>My pictures</h1>
+  <div class="row" th:each="picture : ${pictures}">
+      <img th:src="@{${'/picture/test?id=' + picture.id}}" />
+  </div>
+</div>
+</body>
+</html>

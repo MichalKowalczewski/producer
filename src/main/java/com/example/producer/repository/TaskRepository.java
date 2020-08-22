@@ -9,8 +9,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Integer> {
 
-    Task findFirstByOrderByIdAsc();
+  Task findFirstByOrderByIdAsc();
 
-    Task findFirstByOrderByIdDesc();
+  Task findFirstByOrderByIdDesc();
 
 }

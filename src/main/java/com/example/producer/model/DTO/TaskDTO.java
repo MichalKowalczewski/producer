@@ -3,99 +3,106 @@ package com.example.producer.model.DTO;
 import java.util.Objects;
 
 public class TaskDTO {
-    private Integer id;
-    private String description;
-    private boolean completed;
-    private Integer completionPercentage;
-    private UserDTO user;
 
-    public TaskDTO() {
-    }
+  private Integer id;
+  private String description;
+  private boolean completed;
+  private Integer completionPercentage;
+  private UserDTO user;
 
-    public TaskDTO(String description) {
-        this.description = description;
-    }
+  public TaskDTO() {
+  }
 
-    public TaskDTO(String description, boolean completed) {
-        this.description = description;
-        this.completed = completed;
-    }
+  public TaskDTO(String description) {
+    this.description = description;
+  }
 
-    public TaskDTO(Integer id, String description, boolean completed) {
-        this.id = id;
-        this.description = description;
-        this.completed = completed;
-    }
+  public TaskDTO(String description, boolean completed) {
+    this.description = description;
+    this.completed = completed;
+  }
 
-    public TaskDTO(String description, boolean completed, Integer completionPercentage, UserDTO user) {
-        this.description = description;
-        this.completed = completed;
-        this.completionPercentage = completionPercentage;
-        this.user = user;
-    }
+  public TaskDTO(Integer id, String description, boolean completed) {
+    this.id = id;
+    this.description = description;
+    this.completed = completed;
+  }
 
-    public TaskDTO(Integer id, String description, boolean completed, Integer completionPercentage, UserDTO user) {
-        this.id = id;
-        this.description = description;
-        this.completed = completed;
-        this.completionPercentage = completionPercentage;
-        this.user = user;
-    }
+  public TaskDTO(String description, boolean completed, Integer completionPercentage,
+      UserDTO user) {
+    this.description = description;
+    this.completed = completed;
+    this.completionPercentage = completionPercentage;
+    this.user = user;
+  }
 
-    public Integer getId() {
-        return id;
-    }
+  public TaskDTO(Integer id, String description, boolean completed, Integer completionPercentage,
+      UserDTO user) {
+    this.id = id;
+    this.description = description;
+    this.completed = completed;
+    this.completionPercentage = completionPercentage;
+    this.user = user;
+  }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+  public Integer getId() {
+    return id;
+  }
 
-    public String getDescription() {
-        return description;
-    }
+  public void setId(Integer id) {
+    this.id = id;
+  }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+  public String getDescription() {
+    return description;
+  }
 
-    public boolean isCompleted() {
-        return completed;
-    }
+  public void setDescription(String description) {
+    this.description = description;
+  }
 
-    public void setCompleted(boolean completed) {
-        this.completed = completed;
-    }
+  public boolean isCompleted() {
+    return completed;
+  }
 
-    public Integer getCompletionPercentage() {
-        return completionPercentage;
-    }
+  public void setCompleted(boolean completed) {
+    this.completed = completed;
+  }
 
-    public void setCompletionPercentage(Integer completionPercentage) {
-        this.completionPercentage = completionPercentage;
-    }
+  public Integer getCompletionPercentage() {
+    return completionPercentage;
+  }
 
-    public UserDTO getUser() {
-        return user;
-    }
+  public void setCompletionPercentage(Integer completionPercentage) {
+    this.completionPercentage = completionPercentage;
+  }
 
-    public void setUser(UserDTO user) {
-        this.user = user;
-    }
+  public UserDTO getUser() {
+    return user;
+  }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        TaskDTO taskDTO = (TaskDTO) o;
-        return completed == taskDTO.completed &&
-                Objects.equals(id, taskDTO.id) &&
-                Objects.equals(description, taskDTO.description) &&
-                Objects.equals(completionPercentage, taskDTO.completionPercentage) &&
-                Objects.equals(user, taskDTO.user);
-    }
+  public void setUser(UserDTO user) {
+    this.user = user;
+  }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, description, completed, completionPercentage, user);
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
     }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    TaskDTO taskDTO = (TaskDTO) o;
+    return completed == taskDTO.completed
+        && Objects.equals(id, taskDTO.id)
+        && Objects.equals(description, taskDTO.description)
+        && Objects.equals(completionPercentage, taskDTO.completionPercentage)
+        && Objects.equals(user, taskDTO.user);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, description, completed, completionPercentage, user);
+  }
 }

@@ -13,31 +13,32 @@ import java.util.List;
 @RequestMapping("/api/tasks")
 public class TaskController {
 
-    @Autowired
-    private TaskService taskService;
+  @Autowired
+  private TaskService taskService;
 
-    @RequestMapping(method = RequestMethod.GET)
-    public List<TaskDTO> findAll() {
-        return taskService.findAll();
-    }
+  @RequestMapping(method = RequestMethod.GET)
+  public List<TaskDTO> findAll() {
+    return taskService.findAll();
+  }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public TaskDTO create(@Valid @RequestBody TaskDTO dto) {
-        return taskService.create(dto);
-    }
+  @RequestMapping(method = RequestMethod.POST)
+  public TaskDTO create(@Valid @RequestBody TaskDTO dto) {
+    return taskService.create(dto);
+  }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public TaskDTO getById(@PathVariable Integer id){
-        return taskService.findById(id);
-    }
+  @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+  public TaskDTO getById(@PathVariable Integer id) {
+    return taskService.findById(id);
+  }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-    public TaskDTO update(@PathVariable Integer id, @RequestBody TaskDTO dto) {
-        return taskService.update(id, dto);
-    }
+  @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+  public TaskDTO update(@PathVariable Integer id, @RequestBody TaskDTO dto) {
+    System.out.println(dto);
+    return taskService.update(id, dto);
+  }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void delete(@PathVariable Integer id) {
-        taskService.delete(id);
-    }
+  @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+  public void delete(@PathVariable Integer id) {
+    taskService.delete(id);
+  }
 }

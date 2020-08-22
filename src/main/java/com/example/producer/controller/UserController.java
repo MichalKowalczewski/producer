@@ -13,31 +13,31 @@ import java.util.List;
 @RequestMapping("/api/users")
 public class UserController {
 
-    @Autowired
-    UserService userService;
+  @Autowired
+  private UserService userService;
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public UserDTO getById(@PathVariable Integer id){
-        return userService.findById(id);
-    }
+  @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+  public UserDTO getById(@PathVariable Integer id) {
+    return userService.findById(id);
+  }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public UserDTO create(@Valid @RequestBody UserDTO user){
-        return userService.create(user);
-    }
+  @RequestMapping(method = RequestMethod.POST)
+  public UserDTO create(@Valid @RequestBody UserDTO user) {
+    return userService.create(user);
+  }
 
-    @RequestMapping(method = RequestMethod.GET)
-    public List<UserDTO> findAll(){
-        return userService.findAll();
-    }
+  @RequestMapping(method = RequestMethod.GET)
+  public List<UserDTO> findAll() {
+    return userService.findAll();
+  }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-    public UserDTO update(@PathVariable Integer id, @RequestBody UserDTO dto) {
-        return userService.update(id, dto);
-    }
+  @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+  public UserDTO update(@PathVariable Integer id, @RequestBody UserDTO dto) {
+    return userService.update(id, dto);
+  }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void delete(@PathVariable Integer id) {
-        userService.delete(id);
-    }
+  @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+  public void delete(@PathVariable Integer id) {
+    userService.delete(id);
+  }
 }
